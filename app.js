@@ -37,24 +37,17 @@ async function handleGreetingIntent() {
   return data.greetings.answers[randomResponseIndex];
 }
 
-async function handlePurchaseProductIntent() {
+async function handlePurchaseProductIntent(productId) {
   const { products } = database;
-  const randomResponseIndex = Math.floor(Math.random() * data.purchase_product.answers.length);
-  const responseMessage = data.purchase_product.answers[randomResponseIndex];
-
-  const productsList = products.map((product) => ({
-    name: product.name,
-    'base-price': product['base-price'],
-    salesCount: product.salesCount
-  }));
+  const selectedProduct = products.map((product) => product.id == productId);
 
   return {
     message: "Okay, great! Let's get started. \n Here are the top sellers. Select an option below",
-    data: productsList
+    data: selectedProduct
   };
 }
 
-async function respondToUserInput(input) {
+async function respondToUserInput(input, productId) {
   const response = await manager.process('en', input);
   let responseMessage = 'Didn\'t understand you there!';
   let responseData = null;
@@ -62,7 +55,7 @@ async function respondToUserInput(input) {
   if (response && response.intent === 'greeting') {
     responseMessage = await handleGreetingIntent();
   } else if (response.intent === 'purchase_product') {
-    const productResponse = await handlePurchaseProductIntent();
+    const productResponse = await handlePurchaseProductIntent(productId);
     responseMessage = productResponse.message;
     responseData = productResponse.data;
   }
@@ -74,8 +67,9 @@ async function respondToUserInput(input) {
 }
 
 app.get('/api/nlp', (req, res) => {
+  const {productId} = req.body;  
   const userMessage = req.query.message;
-  respondToUserInput(userMessage).then((botResponse) => res.send(botResponse))
+  respondToUserInput(userMessage, productId).then((botResponse) => res.send(botResponse))
     .catch((error) => {
       console.error(error);
       res.status(500).json({ message: 'An error occurred' });
@@ -92,43 +86,6 @@ app.get("/api/unsure/:type", (req, res) => {
 });
 
 
-app.get('/api/products/:product_id/colors', (req, res) => {
-  const productId = req.params.product_id;
-  const product = database.products.find((p) => p.name === productId);
-
-  if (!product) {
-    res.status(404).json({
-      message: 'Product not found. Would you like to select another product?',
-      data: null
-    });
-  } else if (!product.colors) {
-    res.status(404).json({ message: 'No color options available for this product' });
-  } else {
-    res.json({
-      message: 'Great choice! Pick a color now.',
-      data: product.colors,
-    });
-  }
-});
-
-app.get('/api/products/:product_id/storage', (req, res) => {
-  const productId = req.params.product_id;
-  const product = database.products.find((p) => p.name === productId);
-
-  if (!product) {
-    res.status(404).json({
-      message: 'Product not found. Would you like to select another product?',
-      data: null,
-    });
-  } else if (product.storage.length == 0) {
-    res.status(404).json({ message: 'No storage options available for this product' });
-  } else {
-    res.json({
-      message: 'Great color choice! Pick a storage option.',
-      data: product.storage,
-    });
-  }
-});
 
 app.get('/api/recommend-storage', (req, res) => {
     const userMessage = req.query.message;
