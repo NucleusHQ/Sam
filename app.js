@@ -3,9 +3,10 @@ import { NlpManager } from 'node-nlp';
 import fs from 'fs';
 
 const app = express();
-const port = 3000;
+const port = 3001;
 const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 const database = JSON.parse(fs.readFileSync('database.json', 'utf-8'));
+app.use(express.json());
 
 const manager = new NlpManager({ languages: ['en'] });
 
@@ -66,9 +67,8 @@ async function respondToUserInput(input, productId) {
   };
 }
 
-app.get('/api/nlp', (req, res) => {
-  const {productId} = req.body;  
-  const userMessage = req.query.message;
+app.post('/api/nlp', (req, res) => {
+  const {productId, message: userMessage} = req.body || {}
   respondToUserInput(userMessage, productId).then((botResponse) => res.send(botResponse))
     .catch((error) => {
       console.error(error);
@@ -129,11 +129,6 @@ if (usageTypes.includes('gaming')) {
     return '128GB'; 
 }
 }
-
-app.listen(3000, () => {
-console.log("Server is up!");
-});
-  
 
 trainNLPModel().then(() => {
   app.listen(port, () => {
