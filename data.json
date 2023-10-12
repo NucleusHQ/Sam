@@ -1,0 +1,56 @@
+{
+    "greetings": {
+      "questions": [
+        "Hey there",
+        "Hello",
+        "Hi",
+        "Good morning",
+        "Hey",
+        "Hi there",
+        "Greetings",
+        "What's up", 
+        "wazzup", 
+        "wassup", 
+        "How are you"
+      ],
+      "answers": [
+        "Hey there! I'm Sam. How can I assist you?",
+        "Hello! I'm Sam. What can I help you with?",
+        "Hi! I'm Sam. How can I assist you today?",
+        "Good morning! I'm Sam. How can I assist you today?",
+        "Hey! I'm Sam. What can I help you with?",
+        "Hi there! I'm Sam. How can I assist you?",
+        "Greetings! I'm Sam, and I'm here to be of service.",
+        "I'm Sam. How can I assist you today?"
+      ]
+    }, 
+    "purchase_product": {
+        "questions": [
+            "I'm in the market for a new mobile phone. How can I buy one?",
+            "Can you assist me in purchasing a mobile phone?",
+            "I need to get a new mobile phone. What's the process for buying one?",
+            "I'd like to buy a mobile phone. What are my options?",
+            "How do I go about purchasing a mobile phone?",
+            "I'm interested in buying a new mobile phone. What should I do?",
+            "Can you help me find and purchase a mobile phone?",
+            "Tell me how to acquire a mobile phone.",
+            "I want to buy a mobile phone. What's the next step?",
+            "Please guide me on how to purchase a mobile phone.",
+            "What's the procedure for buying a mobile phone?",
+            "Is it possible to purchase a mobile phone here?",
+            "How can I order a mobile phone from your store?",
+            "I'm looking to buy a new mobile phone. Where do I start?",
+            "Can I buy a mobile phone from your shop?",
+            "I'd like to own a mobile phone. How do I get one?",
+            "What's the buying process for mobile phones?",
+            "Can you assist me in purchasing a new mobile phone?",
+            "I want to get a mobile phone. How do I proceed?",
+            "How can I go about purchasing a new mobile phone?"
+        ], 
+        "answers": [
+            "That's great. Here's what's trending. Pick one!"
+        ]
+    }
+
+  }
+  

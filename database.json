@@ -1,0 +1,384 @@
+{
+    "products": [
+        {
+            "name": "Galaxy S21 Ultra",
+            "base-price": "1199",
+            "type": "phone",
+            "sku": "101",
+            "features": [
+                "gaming",
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "5G",
+                "durability"
+            ],
+            "salesCount": "80",
+            "colors": [
+                {
+                    "name": "Phantom Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Phantom Silver",
+                    "hexCode": "#C0C0C0"
+                },
+                {
+                    "name": "Mystic Bronze",
+                    "hexCode": "#D2B48C"
+                },
+                {
+                    "name": "Mystic White",
+                    "hexCode": "#FFFFFF"
+                },
+                {
+                    "name": "Mystic Navy",
+                    "hexCode": "#001F3F"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 1199,
+                    "storageGB": 128
+                },
+                {
+                    "price": 1299,
+                    "storageGB": 256
+                },
+                {
+                    "price": 1399,
+                    "storageGB": 512
+                },
+                {
+                    "price": 1499,
+                    "storageGB": 1024
+                }
+            ]
+        },
+        {
+            "name": "Galaxy Z Fold 3",
+            "base-price": "1799",
+            "sku": "102",
+            "type": "phone",
+            "salesCount": "120",
+            "features": [
+                "gaming",
+                "camera",
+                "battery",
+                "performance",
+                "foldable",
+                "5G",
+                "durability"
+            ],
+            "colors": [
+                {
+                    "name": "Phantom Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Phantom Green",
+                    "hexCode": "#00FF00"
+                },
+                {
+                    "name": "Mystic Bronze",
+                    "hexCode": "#D2B48C"
+                },
+                {
+                    "name": "Mystic Silver",
+                    "hexCode": "#C0C0C0"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 1799,
+                    "storageGB": 256
+                },
+                {
+                    "price": 1999,
+                    "storageGB": 512
+                },
+                {
+                    "price": 2199,
+                    "storageGB": 1024
+                }
+            ]
+        },
+        {
+            "name": "Galaxy S20 FE",
+            "base-price": "699",
+            "sku": "103",
+            "type": "phone",
+            "salesCount": "300",
+            "features": [
+                "gaming",
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "5G",
+                "durability"
+            ],
+            "colors": [
+                {
+                    "name": "Cloud Red",
+                    "hexCode": "#FF5733"
+                },
+                {
+                    "name": "Cloud Lavender",
+                    "hexCode": "#9678B6"
+                },
+                {
+                    "name": "Cloud Mint",
+                    "hexCode": "#A1C935"
+                },
+                {
+                    "name": "Cloud Navy",
+                    "hexCode": "#2B65EC"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 699,
+                    "storageGB": 128
+                }
+            ]
+        },
+        {
+            "name": "Galaxy A52 5G",
+            "base-price": "499",
+            "sku": "104",
+            "type": "phone",
+            "salesCount": "25",
+            "features": [
+                "gaming",
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "5G",
+                "durability"
+            ],
+            "colors": [
+                {
+                    "name": "Awesome Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Awesome White",
+                    "hexCode": "#FFFFFF"
+                },
+                {
+                    "name": "Awesome Violet",
+                    "hexCode": "#9900CC"
+                },
+                {
+                    "name": "Awesome Blue",
+                    "hexCode": "#0000FF"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 499,
+                    "storageGB": 128
+                },
+                {
+                    "price": 549,
+                    "storageGB": 256
+                }
+            ]
+        },
+        {
+            "name": "Galaxy Note 20 Ultra",
+            "base-price": "1299",
+            "sku": "105",
+            "type": "phone",
+            "salesCount": "400",
+            "features": [
+                "gaming",
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "5G",
+                "S Pen"
+            ],
+            "colors": [
+                {
+                    "name": "Mystic Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Mystic Bronze",
+                    "hexCode": "#D2B48C"
+                },
+                {
+                    "name": "Mystic White",
+                    "hexCode": "#FFFFFF"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 1299,
+                    "storageGB": 256
+                }
+            ]
+        },
+        {
+            "name": "Galaxy A32",
+            "base-price": "299",
+            "sku": "106",
+            "type": "phone",
+            "salesCount": "245",
+            "features": [
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "4G"
+            ],
+            "colors": [
+                {
+                    "name": "Awesome Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Awesome White",
+                    "hexCode": "#FFFFFF"
+                },
+                {
+                    "name": "Awesome Blue",
+                    "hexCode": "#0000FF"
+                },
+                {
+                    "name": "Awesome Violet",
+                    "hexCode": "#9900CC"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 299,
+                    "storageGB": 64
+                },
+                {
+                    "price": 349,
+                    "storageGB": 128
+                }
+            ]
+        },
+        {
+            "name": "Galaxy M32",
+            "base-price": "249",
+            "sku": "107",
+            "type": "phone",
+            "salesCount": "2342",
+            "features": [
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "4G"
+            ],
+            "colors": [
+                {
+                    "name": "Arctic Blue",
+                    "hexCode": "#0000FF"
+                },
+                {
+                    "name": "Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Black",
+                    "hexCode": "#000000"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 249,
+                    "storageGB": 64
+                },
+                {
+                    "price": 299,
+                    "storageGB": 128
+                }
+            ]
+        },
+        {
+            "name": "Galaxy A12",
+            "base-price": "179",
+            "sku": "108",
+            "type": "phone",
+            "salesCount": "42",
+            "features": [
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "4G"
+            ],
+            "colors": [
+                {
+                    "name": "Blue",
+                    "hexCode": "#0000FF"
+                },
+                {
+                    "name": "Black",
+                    "hexCode": "#000000"
+                },
+                {
+                    "name": "Red",
+                    "hexCode": "#FF0000"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 179,
+                    "storageGB": 32
+                },
+                {
+                    "price": 199,
+                    "storageGB": 64
+                }
+            ]
+        },
+        {
+            "type": "phone",
+            "name": "Galaxy F22",
+            "sku": "109",
+            "base-price": "199",
+            "salesCount": "244",
+            "features": [
+                "camera",
+                "battery",
+                "performance",
+                "display",
+                "4G"
+            ],
+            "colors": [
+                {
+                    "name": "Denim Blue",
+                    "hexCode": "#1560BD"
+                },
+                {
+                    "name": "Arctic Blue",
+                    "hexCode": "#0000FF"
+                },
+                {
+                    "name": "Mint Green",
+                    "hexCode": "#98FB98"
+                }
+            ],
+            "storage": [
+                {
+                    "price": 199,
+                    "storageGB": 64
+                },
+                {
+                    "price": 219,
+                    "storageGB": 128
+                }
+            ]
+        }
+    ]
+}

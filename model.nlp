@@ -1,0 +1,1594 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "hey,there": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi,there": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "greet": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "is,up,what": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "wazzup": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "wassup": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "a,am,buy,can,for,how,i,in,market,mobil,new,one,phone,the": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,assist,can,in,me,mobil,phone,purchas,you": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,buy,for,get,i,is,mobil,need,new,one,phone,process,the,to,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,are,buy,had,i,like,mobil,my,option,phone,to,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,about,do,go,how,i,mobil,phone,purchas": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,am,buy,do,i,in,interest,mobil,new,phone,should,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,and,can,find,help,me,mobil,phone,purchas,you": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,acquir,how,me,mobil,phone,tell,to": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,buy,i,is,mobil,next,phone,step,the,to,want,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,guid,how,me,mobil,on,phone,pleas,purchas,to": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,buy,for,is,mobil,phone,procedur,the,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,here,is,it,mobil,phone,possibl,purchas,to": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,can,from,how,i,mobil,order,phone,store,your": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,am,buy,do,i,look,mobil,new,phone,start,to,where": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,buy,can,from,i,mobil,phone,shop,your": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,do,get,had,how,i,like,mobil,one,own,phone,to": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "buy,for,is,mobil,phone,process,the,what": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,assist,can,in,me,mobil,new,phone,purchas,you": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,do,get,how,i,mobil,phone,proceed,to,want": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "a,about,can,go,how,i,mobil,new,phone,purchas": {
+            "intent": "purchase_product",
+            "domain": "default"
+          },
+          "game,im,into": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "for,i,it,media,social,to,use,want": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "for,general,i,it,need,usag": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "is,my,photographi,thing": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,both,for,game,i,it,photographi,plan,to,use": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "for,game,i,it,main,need": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,are,game,interest,my,photographi": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "for,general,i,it,purpos,to,use,want": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "is,media,my,primari,social,use": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "a,and,for,game,general,i,need,phone,usag": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,for,i,it,media,photographi,plan,social,to,use": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,are,game,interest,media,my,photographi,social": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,game,general,usag": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,for,general,i,it,media,purpos,social,to,use,want": {
+            "intent": "intended-usage",
+            "domain": "default"
+          },
+          "and,are,game,main,my,photographi,use": {
+            "intent": "intended-usage",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greeting": "default",
+          "purchase_product": "default",
+          "intended-usage": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "What's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "wazzup",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "wassup",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "How are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm in the market for a new mobile phone. How can I buy one?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can you assist me in purchasing a mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to get a new mobile phone. What's the process for buying one?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'd like to buy a mobile phone. What are my options?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "How do I go about purchasing a mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm interested in buying a new mobile phone. What should I do?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can you help me find and purchase a mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Tell me how to acquire a mobile phone.",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a mobile phone. What's the next step?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Please guide me on how to purchase a mobile phone.",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "What's the procedure for buying a mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Is it possible to purchase a mobile phone here?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "How can I order a mobile phone from your store?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'm looking to buy a new mobile phone. Where do I start?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can I buy a mobile phone from your shop?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'd like to own a mobile phone. How do I get one?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "What's the buying process for mobile phones?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Can you assist me in purchasing a new mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to get a mobile phone. How do I proceed?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "How can I go about purchasing a new mobile phone?",
+            "intent": "purchase_product"
+          },
+          {
+            "domain": "default",
+            "utterance": "Im into gaming",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to use it for social media",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need it for general usage",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "Photography is my thing",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I plan to use it for both gaming and photography",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need it for gaming, mainly",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "Photography and gaming are my interests",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to use it for general purposes",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "My primary use is social media",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need a phone for gaming and general usage",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I plan to use it for photography and social media",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "My interests are gaming, photography, and social media",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "General usage and gaming",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to use it for general purposes and social media",
+            "intent": "intended-usage"
+          },
+          {
+            "domain": "default",
+            "utterance": "Gaming and photography are my main uses",
+            "intent": "intended-usage"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "hey": 1,
+              "there": 1,
+              "hello": 1,
+              "hi": 1,
+              "good": 1,
+              "morn": 1,
+              "greet": 1,
+              "what": 1,
+              "is": 1,
+              "up": 1,
+              "wazzup": 1,
+              "wassup": 1,
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "i": 1,
+              "am": 1,
+              "in": 1,
+              "the": 1,
+              "market": 1,
+              "for": 1,
+              "a": 1,
+              "new": 1,
+              "mobil": 1,
+              "phone": 1,
+              "can": 1,
+              "buy": 1,
+              "one": 1,
+              "assist": 1,
+              "me": 1,
+              "purchas": 1,
+              "need": 1,
+              "to": 1,
+              "get": 1,
+              "process": 1,
+              "had": 1,
+              "like": 1,
+              "my": 1,
+              "option": 1,
+              "do": 1,
+              "go": 1,
+              "about": 1,
+              "interest": 1,
+              "should": 1,
+              "help": 1,
+              "find": 1,
+              "and": 1,
+              "tell": 1,
+              "acquir": 1,
+              "want": 1,
+              "next": 1,
+              "step": 1,
+              "pleas": 1,
+              "guid": 1,
+              "on": 1,
+              "procedur": 1,
+              "it": 1,
+              "possibl": 1,
+              "here": 1,
+              "order": 1,
+              "from": 1,
+              "your": 1,
+              "store": 1,
+              "look": 1,
+              "where": 1,
+              "start": 1,
+              "shop": 1,
+              "own": 1,
+              "proceed": 1,
+              "im": 1,
+              "into": 1,
+              "game": 1,
+              "use": 1,
+              "social": 1,
+              "media": 1,
+              "general": 1,
+              "usag": 1,
+              "photographi": 1,
+              "thing": 1,
+              "plan": 1,
+              "both": 1,
+              "main": 1,
+              "purpos": 1,
+              "primari": 1
+            },
+            "intents": {
+              "greeting": 1,
+              "purchase_product": 1,
+              "intended-usage": 1
+            },
+            "intentFeatures": {
+              "greeting": {
+                "hey": 1,
+                "there": 1,
+                "hello": 1,
+                "hi": 1,
+                "good": 1,
+                "morn": 1,
+                "greet": 1,
+                "what": 1,
+                "is": 1,
+                "up": 1,
+                "wazzup": 1,
+                "wassup": 1,
+                "how": 1,
+                "are": 1,
+                "you": 1
+              },
+              "purchase_product": {
+                "i": 1,
+                "am": 1,
+                "in": 1,
+                "the": 1,
+                "market": 1,
+                "for": 1,
+                "a": 1,
+                "new": 1,
+                "mobil": 1,
+                "phone": 1,
+                "how": 1,
+                "can": 1,
+                "buy": 1,
+                "one": 1,
+                "you": 1,
+                "assist": 1,
+                "me": 1,
+                "purchas": 1,
+                "need": 1,
+                "to": 1,
+                "get": 1,
+                "what": 1,
+                "is": 1,
+                "process": 1,
+                "had": 1,
+                "like": 1,
+                "are": 1,
+                "my": 1,
+                "option": 1,
+                "do": 1,
+                "go": 1,
+                "about": 1,
+                "interest": 1,
+                "should": 1,
+                "help": 1,
+                "find": 1,
+                "and": 1,
+                "tell": 1,
+                "acquir": 1,
+                "want": 1,
+                "next": 1,
+                "step": 1,
+                "pleas": 1,
+                "guid": 1,
+                "on": 1,
+                "procedur": 1,
+                "it": 1,
+                "possibl": 1,
+                "here": 1,
+                "order": 1,
+                "from": 1,
+                "your": 1,
+                "store": 1,
+                "look": 1,
+                "where": 1,
+                "start": 1,
+                "shop": 1,
+                "own": 1,
+                "proceed": 1
+              },
+              "intended-usage": {
+                "im": 1,
+                "into": 1,
+                "game": 1,
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "use": 1,
+                "it": 1,
+                "for": 1,
+                "social": 1,
+                "media": 1,
+                "need": 1,
+                "general": 1,
+                "usag": 1,
+                "photographi": 1,
+                "is": 1,
+                "my": 1,
+                "thing": 1,
+                "plan": 1,
+                "both": 1,
+                "and": 1,
+                "main": 1,
+                "are": 1,
+                "interest": 1,
+                "purpos": 1,
+                "primari": 1,
+                "a": 1,
+                "phone": 1
+              }
+            },
+            "featuresToIntent": {
+              "hey": [
+                "greeting"
+              ],
+              "there": [
+                "greeting"
+              ],
+              "hello": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "greet": [
+                "greeting"
+              ],
+              "what": [
+                "greeting",
+                "purchase_product"
+              ],
+              "is": [
+                "greeting",
+                "purchase_product",
+                "intended-usage"
+              ],
+              "up": [
+                "greeting"
+              ],
+              "wazzup": [
+                "greeting"
+              ],
+              "wassup": [
+                "greeting"
+              ],
+              "how": [
+                "greeting",
+                "purchase_product"
+              ],
+              "are": [
+                "greeting",
+                "purchase_product",
+                "intended-usage"
+              ],
+              "you": [
+                "greeting",
+                "purchase_product"
+              ],
+              "i": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "am": [
+                "purchase_product"
+              ],
+              "in": [
+                "purchase_product"
+              ],
+              "the": [
+                "purchase_product"
+              ],
+              "market": [
+                "purchase_product"
+              ],
+              "for": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "a": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "new": [
+                "purchase_product"
+              ],
+              "mobil": [
+                "purchase_product"
+              ],
+              "phone": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "can": [
+                "purchase_product"
+              ],
+              "buy": [
+                "purchase_product"
+              ],
+              "one": [
+                "purchase_product"
+              ],
+              "assist": [
+                "purchase_product"
+              ],
+              "me": [
+                "purchase_product"
+              ],
+              "purchas": [
+                "purchase_product"
+              ],
+              "need": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "to": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "get": [
+                "purchase_product"
+              ],
+              "process": [
+                "purchase_product"
+              ],
+              "had": [
+                "purchase_product"
+              ],
+              "like": [
+                "purchase_product"
+              ],
+              "my": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "option": [
+                "purchase_product"
+              ],
+              "do": [
+                "purchase_product"
+              ],
+              "go": [
+                "purchase_product"
+              ],
+              "about": [
+                "purchase_product"
+              ],
+              "interest": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "should": [
+                "purchase_product"
+              ],
+              "help": [
+                "purchase_product"
+              ],
+              "find": [
+                "purchase_product"
+              ],
+              "and": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "tell": [
+                "purchase_product"
+              ],
+              "acquir": [
+                "purchase_product"
+              ],
+              "want": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "next": [
+                "purchase_product"
+              ],
+              "step": [
+                "purchase_product"
+              ],
+              "pleas": [
+                "purchase_product"
+              ],
+              "guid": [
+                "purchase_product"
+              ],
+              "on": [
+                "purchase_product"
+              ],
+              "procedur": [
+                "purchase_product"
+              ],
+              "it": [
+                "purchase_product",
+                "intended-usage"
+              ],
+              "possibl": [
+                "purchase_product"
+              ],
+              "here": [
+                "purchase_product"
+              ],
+              "order": [
+                "purchase_product"
+              ],
+              "from": [
+                "purchase_product"
+              ],
+              "your": [
+                "purchase_product"
+              ],
+              "store": [
+                "purchase_product"
+              ],
+              "look": [
+                "purchase_product"
+              ],
+              "where": [
+                "purchase_product"
+              ],
+              "start": [
+                "purchase_product"
+              ],
+              "shop": [
+                "purchase_product"
+              ],
+              "own": [
+                "purchase_product"
+              ],
+              "proceed": [
+                "purchase_product"
+              ],
+              "im": [
+                "intended-usage"
+              ],
+              "into": [
+                "intended-usage"
+              ],
+              "game": [
+                "intended-usage"
+              ],
+              "use": [
+                "intended-usage"
+              ],
+              "social": [
+                "intended-usage"
+              ],
+              "media": [
+                "intended-usage"
+              ],
+              "general": [
+                "intended-usage"
+              ],
+              "usag": [
+                "intended-usage"
+              ],
+              "photographi": [
+                "intended-usage"
+              ],
+              "thing": [
+                "intended-usage"
+              ],
+              "plan": [
+                "intended-usage"
+              ],
+              "both": [
+                "intended-usage"
+              ],
+              "main": [
+                "intended-usage"
+              ],
+              "purpos": [
+                "intended-usage"
+              ],
+              "primari": [
+                "intended-usage"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "hey",
+                "there",
+                "hello",
+                "hi",
+                "good",
+                "morn",
+                "greet",
+                "what",
+                "is",
+                "up",
+                "wazzup",
+                "wassup",
+                "how",
+                "are",
+                "you",
+                "i",
+                "am",
+                "in",
+                "the",
+                "market",
+                "for",
+                "a",
+                "new",
+                "mobil",
+                "phone",
+                "can",
+                "buy",
+                "one",
+                "assist",
+                "me",
+                "purchas",
+                "need",
+                "to",
+                "get",
+                "process",
+                "had",
+                "like",
+                "my",
+                "option",
+                "do",
+                "go",
+                "about",
+                "interest",
+                "should",
+                "help",
+                "find",
+                "and",
+                "tell",
+                "acquir",
+                "want",
+                "next",
+                "step",
+                "pleas",
+                "guid",
+                "on",
+                "procedur",
+                "it",
+                "possibl",
+                "here",
+                "order",
+                "from",
+                "your",
+                "store",
+                "look",
+                "where",
+                "start",
+                "shop",
+                "own",
+                "proceed",
+                "im",
+                "into",
+                "game",
+                "use",
+                "social",
+                "media",
+                "general",
+                "usag",
+                "photographi",
+                "thing",
+                "plan",
+                "both",
+                "main",
+                "purpos",
+                "primari"
+              ],
+              "intents": [
+                "greeting",
+                "purchase_product",
+                "intended-usage"
+              ],
+              "perceptrons": [
+                [
+                  4.093267440795898,
+                  0.027010319754481316,
+                  4.117496490478516,
+                  4.092739582061768,
+                  2.0563623905181885,
+                  2.0563623905181885,
+                  4.1147050857543945,
+                  2.0681231021881104,
+                  -0.9825407266616821,
+                  3.026325225830078,
+                  4.114514350891113,
+                  4.114328861236572,
+                  1.0195032358169556,
+                  1.3963062763214111,
+                  1.6964646577835083,
+                  -2.1975595951080322,
+                  -0.22626015543937683,
+                  -0.8212592601776123,
+                  -1.2272238731384277,
+                  -0.22626015543937683,
+                  -2.322540044784546,
+                  -2.236238956451416,
+                  -0.4498428702354431,
+                  -2.784031867980957,
+                  -2.784031867980957,
+                  -1.0513488054275513,
+                  -1.4101345539093018,
+                  -0.4498428702354431,
+                  -0.3970213830471039,
+                  -1.1054848432540894,
+                  -0.8425286412239075,
+                  -0.9774472117424011,
+                  -1.3050256967544556,
+                  -0.11045262962579727,
+                  -0.7681100964546204,
+                  -0.09145521372556686,
+                  -0.09145521372556686,
+                  -4.076158046722412,
+                  -0.09145521372556686,
+                  -0.1845201551914215,
+                  -0.1845201551914215,
+                  -0.1845201551914215,
+                  -0.5831397175788879,
+                  0,
+                  -0.05095569044351578,
+                  -0.05095569044351578,
+                  -1.9254881143569946,
+                  -0.4892599582672119,
+                  -0.4892599582672119,
+                  -0.2777768075466156,
+                  0,
+                  0,
+                  -0.04599323868751526,
+                  -0.04599323868751526,
+                  -0.04599323868751526,
+                  -0.003866721410304308,
+                  -1.116057276725769,
+                  -0.0106646828353405,
+                  -0.0106646828353405,
+                  -0.035037774592638016,
+                  -0.035037774592638016,
+                  -0.035037774592638016,
+                  -0.035037774592638016,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -2.742680788040161,
+                  -2.742680788040161,
+                  -4.688061237335205,
+                  -1.368140697479248,
+                  -1.3999731540679932,
+                  -1.3999731540679932,
+                  -1.7804328203201294,
+                  -1.7796928882598877,
+                  -2.9146223068237305,
+                  -2.2002627849578857,
+                  -0.016660984605550766,
+                  -0.016660984605550766,
+                  -0.11343861371278763,
+                  -0.00036991346860304475,
+                  -0.9982160329818726,
+                  10.173783818199615
+                ],
+                [
+                  -0.08382333815097809,
+                  -0.06788083165884018,
+                  -0.06102045252919197,
+                  -0.0754050761461258,
+                  -0.04361296072602272,
+                  -0.04361296072602272,
+                  -0.05667748674750328,
+                  0.7030258774757385,
+                  0.4190788269042969,
+                  -1.136388897895813,
+                  -0.032241251319646835,
+                  -0.03150355815887451,
+                  0.9121195673942566,
+                  -0.5709515810012817,
+                  -0.2855980396270752,
+                  -0.7259126901626587,
+                  0.08824768662452698,
+                  0.11512261629104614,
+                  1.1748480796813965,
+                  -0.13484680652618408,
+                  -0.6114902496337891,
+                  1.8242188692092896,
+                  -0.018333647400140762,
+                  5.060400485992432,
+                  4.009507656097412,
+                  1.2453616857528687,
+                  1.8347123861312866,
+                  -0.4342513680458069,
+                  0.10749044269323349,
+                  0.8724481463432312,
+                  1.4031161069869995,
+                  -1.9279857873916626,
+                  0.8069936037063599,
+                  0.4770033061504364,
+                  1.7515339851379395,
+                  0.5281875133514404,
+                  0.5281875133514404,
+                  -0.04963244870305061,
+                  0.39390209317207336,
+                  1.2221033573150635,
+                  0.31711000204086304,
+                  0.31711000204086304,
+                  0.08865570276975632,
+                  0.14255087077617645,
+                  0.5179406404495239,
+                  0.5179406404495239,
+                  -0.8214459419250488,
+                  0.42882227897644043,
+                  0.42882227897644043,
+                  -0.022629428654909134,
+                  -0.3708856403827667,
+                  -0.3708856403827667,
+                  -0.1816919445991516,
+                  -0.1816919445991516,
+                  -0.1816919445991516,
+                  -0.07102326303720474,
+                  -0.46420595049858093,
+                  0.6420921683311462,
+                  0.6420921683311462,
+                  0.4828466475009918,
+                  0.5257838368415833,
+                  0.5257838368415833,
+                  0.4828466475009918,
+                  0.08059831708669662,
+                  0.08059831708669662,
+                  0.08059831708669662,
+                  0.042901813983917236,
+                  0.1342475712299347,
+                  0.776482880115509,
+                  -0.05600952357053757,
+                  -0.05600952357053757,
+                  -1.5213985443115234,
+                  -0.682856023311615,
+                  -0.39724424481391907,
+                  -0.39724424481391907,
+                  -1.3101202249526978,
+                  -1.2756084203720093,
+                  -0.5605067014694214,
+                  -0.2750832140445709,
+                  -0.11729663610458374,
+                  -0.11729663610458374,
+                  -0.07178446650505066,
+                  -0.016339780762791634,
+                  -0.05110883712768555,
+                  -0.054880915685442434
+                ],
+                [
+                  -1.5193356275558472,
+                  -0.7989253997802734,
+                  -1.5225622653961182,
+                  -1.5212888717651367,
+                  -0.7683312892913818,
+                  -0.7683312892913818,
+                  -1.5171805620193481,
+                  -2.5751969814300537,
+                  2.79960298538208,
+                  -1.7384941577911377,
+                  -1.5137107372283936,
+                  -1.5118532180786133,
+                  -0.8918907046318054,
+                  -1.8073822259902954,
+                  -0.3602728545665741,
+                  1.8314907550811768,
+                  -0.28441792726516724,
+                  -0.42751526832580566,
+                  -0.7079371809959412,
+                  -0.28441792726516724,
+                  2.1055707931518555,
+                  -1.8441283702850342,
+                  -0.7079371809959412,
+                  -2.060134172439575,
+                  -1.8441283702850342,
+                  -0.42751526832580566,
+                  -1.0567378997802734,
+                  -0.7079371809959412,
+                  -0.0008883894188329577,
+                  -0.0008883894188329577,
+                  -0.6545959115028381,
+                  0.15644091367721558,
+                  1.0254309177398682,
+                  -0.2813102900981903,
+                  -0.2813102900981903,
+                  -0.13704103231430054,
+                  -0.13704103231430054,
+                  4.353224277496338,
+                  -0.13704103231430054,
+                  0,
+                  0,
+                  0,
+                  1.5927135944366455,
+                  0,
+                  0,
+                  0,
+                  -0.4797748625278473,
+                  0,
+                  0,
+                  2.3250157833099365,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2.3638665676116943,
+                  -0.6528190970420837,
+                  -0.6528190970420837,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3.2548444271087646,
+                  3.2548444271087646,
+                  6.2786102294921875,
+                  2.2742574214935303,
+                  0.3675590753555298,
+                  0.3675590753555298,
+                  2.4473085403442383,
+                  4.154654026031494,
+                  2.338846445083618,
+                  3.280625104904175,
+                  0.18273800611495972,
+                  -4.760509014129639,
+                  -0.07813379168510437,
+                  -1.714139699935913,
+                  2.473926305770874,
+                  1.551858962201672
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Hey there"
+      ],
+      [
+        "en",
+        "Hello"
+      ],
+      [
+        "en",
+        "Hi"
+      ],
+      [
+        "en",
+        "Good morning"
+      ],
+      [
+        "en",
+        "Hey"
+      ],
+      [
+        "en",
+        "Hi there"
+      ],
+      [
+        "en",
+        "Greetings"
+      ],
+      [
+        "en",
+        "What's up"
+      ],
+      [
+        "en",
+        "wazzup"
+      ],
+      [
+        "en",
+        "wassup"
+      ],
+      [
+        "en",
+        "How are you"
+      ],
+      [
+        "en",
+        "I'm in the market for a new mobile phone. How can I buy one?"
+      ],
+      [
+        "en",
+        "Can you assist me in purchasing a mobile phone?"
+      ],
+      [
+        "en",
+        "I need to get a new mobile phone. What's the process for buying one?"
+      ],
+      [
+        "en",
+        "I'd like to buy a mobile phone. What are my options?"
+      ],
+      [
+        "en",
+        "How do I go about purchasing a mobile phone?"
+      ],
+      [
+        "en",
+        "I'm interested in buying a new mobile phone. What should I do?"
+      ],
+      [
+        "en",
+        "Can you help me find and purchase a mobile phone?"
+      ],
+      [
+        "en",
+        "Tell me how to acquire a mobile phone."
+      ],
+      [
+        "en",
+        "I want to buy a mobile phone. What's the next step?"
+      ],
+      [
+        "en",
+        "Please guide me on how to purchase a mobile phone."
+      ],
+      [
+        "en",
+        "What's the procedure for buying a mobile phone?"
+      ],
+      [
+        "en",
+        "Is it possible to purchase a mobile phone here?"
+      ],
+      [
+        "en",
+        "How can I order a mobile phone from your store?"
+      ],
+      [
+        "en",
+        "I'm looking to buy a new mobile phone. Where do I start?"
+      ],
+      [
+        "en",
+        "Can I buy a mobile phone from your shop?"
+      ],
+      [
+        "en",
+        "I'd like to own a mobile phone. How do I get one?"
+      ],
+      [
+        "en",
+        "What's the buying process for mobile phones?"
+      ],
+      [
+        "en",
+        "Can you assist me in purchasing a new mobile phone?"
+      ],
+      [
+        "en",
+        "I want to get a mobile phone. How do I proceed?"
+      ],
+      [
+        "en",
+        "How can I go about purchasing a new mobile phone?"
+      ],
+      [
+        "en",
+        "Im into gaming"
+      ],
+      [
+        "en",
+        "I want to use it for social media"
+      ],
+      [
+        "en",
+        "I need it for general usage"
+      ],
+      [
+        "en",
+        "Photography is my thing"
+      ],
+      [
+        "en",
+        "I plan to use it for both gaming and photography"
+      ],
+      [
+        "en",
+        "I need it for gaming, mainly"
+      ],
+      [
+        "en",
+        "Photography and gaming are my interests"
+      ],
+      [
+        "en",
+        "I want to use it for general purposes"
+      ],
+      [
+        "en",
+        "My primary use is social media"
+      ],
+      [
+        "en",
+        "I need a phone for gaming and general usage"
+      ],
+      [
+        "en",
+        "I plan to use it for photography and social media"
+      ],
+      [
+        "en",
+        "My interests are gaming, photography, and social media"
+      ],
+      [
+        "en",
+        "General usage and gaming"
+      ],
+      [
+        "en",
+        "I want to use it for general purposes and social media"
+      ],
+      [
+        "en",
+        "Gaming and photography are my main uses"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {
+      "*": {
+        "UsageType": {
+          "name": "UsageType",
+          "type": "enum",
+          "rules": [
+            {
+              "option": "gaming",
+              "texts": [
+                "gaming"
+              ]
+            },
+            {
+              "option": "photography",
+              "texts": [
+                "photography"
+              ]
+            },
+            {
+              "option": "social media",
+              "texts": [
+                "social media"
+              ]
+            },
+            {
+              "option": "general usage",
+              "texts": [
+                "general usage"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Hey there! I'm Sam. How can I assist you?"
+          },
+          {
+            "answer": "Hello! I'm Sam. What can I help you with?"
+          },
+          {
+            "answer": "Hi! I'm Sam. How can I assist you today?"
+          },
+          {
+            "answer": "Good morning! I'm Sam. How can I assist you today?"
+          },
+          {
+            "answer": "Hey! I'm Sam. What can I help you with?"
+          },
+          {
+            "answer": "Hi there! I'm Sam. How can I assist you?"
+          },
+          {
+            "answer": "Greetings! I'm Sam, and I'm here to be of service."
+          },
+          {
+            "answer": "I'm Sam. How can I assist you today?"
+          },
+          {}
+        ],
+        "purchase_product": [
+          {
+            "answer": "That's great. Here's what's trending. Pick one!"
+          },
+          {}
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
