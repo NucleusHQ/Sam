@@ -42,11 +42,17 @@ async function handleGreetingIntent() {
 
 async function handlePurchaseProductIntent(productId) {
   const { products } = database;
-  const selectedProduct = products.map((product) => product.id == productId);
+  
+  const productList = products.map(({productId, name}) => {
+    return {    
+        name, 
+        productId
+    }
+  })
 
   return {
     message: "Okay, great! Let's get started. \n Here are the top sellers. Select an option below",
-    data: selectedProduct
+    data: productList
   };
 }
 
@@ -65,7 +71,7 @@ async function respondToUserInput(input, productId) {
 
   return {
     message: responseMessage,
-    data: responseData,
+    data: responseData
   };
 }
 
