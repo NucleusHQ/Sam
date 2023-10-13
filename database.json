@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "name": "Galaxy S21 Ultra",
+            "name": "Galaxy S23 Ultra",
             "base-price": "1199",
             "type": "phone",
             "productId": "101",
@@ -53,6 +53,28 @@
                 {
                     "price": 1499,
                     "storageGB": 1024
+                }
+            ],
+            "featureDescription": [
+                {
+                    "tilte" : "",
+                    "description": "The Samung Galaxy S23 Ultra is the best option gaming"
+                },
+                {
+                    "tilte" : "Powerful processor",
+                    "description": "Offers exceptional processing power for smooth gameplay"
+                },
+                {
+                    "tilte" : "Large Dynamic AMOLED Display",
+                    "description": "Provides a vibrant and responsive gaming experience"
+                },
+                {
+                    "tilte" : "High Ram Capacity",
+                    "description": "Enables seamless multitasking and resource intensive game performance"
+                },
+                {
+                    "tilte" : "Long Battery Life",
+                    "description": "Facilitates extented gaming sesions without frequent recharging"
                 }
             ]
         },

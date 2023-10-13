@@ -55,6 +55,16 @@ async function handlePurchaseProductIntent(productId) {
     data: productList
   };
 }
+async function handlePurchaseProductIntentByEntity(entity) {
+  const { products } = database;
+  
+  const productList = products.filter((product) => product.features.includes[entity]);
+
+  return {
+    message: "I got you covered. Here's the best phone for gaming",
+    data: productList.slice(0,1)
+  };
+}
 
 async function respondToUserInput(input, productId) {
   const response = await manager.process('en', input);
@@ -64,7 +74,11 @@ async function respondToUserInput(input, productId) {
   if (response && response.intent === 'greeting') {
     responseMessage = await handleGreetingIntent();
   } else if (response.intent === 'purchase_product') {
-    const productResponse = await handlePurchaseProductIntent(productId);
+    let productResponse;
+    if(response.entity){
+      productResponse = await handlePurchaseProductIntentByEntity(response.entity);
+    }
+    productResponse = await handlePurchaseProductIntent(productId);
     responseMessage = productResponse.message;
     responseData = productResponse.data;
   }
