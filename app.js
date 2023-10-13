@@ -55,10 +55,10 @@ async function handlePurchaseProductIntent(productId) {
     data: productList
   };
 }
-async function handlePurchaseProductIntentByEntity(entity) {
+async function handlePurchaseProductIntentByEntity(entities) {
   const { products } = database;
   
-  const productList = products.filter((product) => product.features.includes[entity]);
+  const productList = products.filter((product) => product.features.includes[entities[0]]);
 
   return {
     message: "I got you covered. Here's the best phone for gaming",
@@ -75,8 +75,8 @@ async function respondToUserInput(input, productId) {
     responseMessage = await handleGreetingIntent();
   } else if (response.intent === 'purchase_product') {
     let productResponse;
-    if(response.entity){
-      productResponse = await handlePurchaseProductIntentByEntity(response.entity);
+    if(response.entities.length > 0){
+      productResponse = await handlePurchaseProductIntentByEntity(response.entities);
     }
     productResponse = await handlePurchaseProductIntent(productId);
     responseMessage = productResponse.message;
