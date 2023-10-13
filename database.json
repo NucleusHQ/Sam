@@ -4,7 +4,7 @@
             "name": "Galaxy S21 Ultra",
             "base-price": "1199",
             "type": "phone",
-            "sku": "101",
+            "productId": "101",
             "features": [
                 "gaming",
                 "camera",
@@ -59,7 +59,7 @@
         {
             "name": "Galaxy Z Fold 3",
             "base-price": "1799",
-            "sku": "102",
+            "productId": "102",
             "type": "phone",
             "salesCount": "120",
             "features": [
@@ -107,7 +107,7 @@
         {
             "name": "Galaxy S20 FE",
             "base-price": "699",
-            "sku": "103",
+            "productId": "103",
             "type": "phone",
             "salesCount": "300",
             "features": [
@@ -147,7 +147,7 @@
         {
             "name": "Galaxy A52 5G",
             "base-price": "499",
-            "sku": "104",
+            "productId": "104",
             "type": "phone",
             "salesCount": "25",
             "features": [
@@ -191,7 +191,7 @@
         {
             "name": "Galaxy Note 20 Ultra",
             "base-price": "1299",
-            "sku": "105",
+            "productId": "105",
             "type": "phone",
             "salesCount": "400",
             "features": [
@@ -227,7 +227,7 @@
         {
             "name": "Galaxy A32",
             "base-price": "299",
-            "sku": "106",
+            "productId": "106",
             "type": "phone",
             "salesCount": "245",
             "features": [
@@ -269,7 +269,7 @@
         {
             "name": "Galaxy M32",
             "base-price": "249",
-            "sku": "107",
+            "productId": "107",
             "type": "phone",
             "salesCount": "2342",
             "features": [
@@ -307,7 +307,7 @@
         {
             "name": "Galaxy A12",
             "base-price": "179",
-            "sku": "108",
+            "productId": "108",
             "type": "phone",
             "salesCount": "42",
             "features": [
@@ -345,7 +345,7 @@
         {
             "type": "phone",
             "name": "Galaxy F22",
-            "sku": "109",
+            "productId": "109",
             "base-price": "199",
             "salesCount": "244",
             "features": [
