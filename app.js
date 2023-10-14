@@ -39,24 +39,15 @@ async function trainNLPModel() {
 
 async function handleGreetingIntent() {
   const randomResponseIndex = Math.floor(Math.random() * data.greetings.answers.length);
-  return data.greetings.answers[randomResponseIndex];
+  return data.greetings.answers[randomResponseIndex]
 }
 
-async function handlePurchaseProductIntent(productId) {
-  const { products } = database;
-
-  const productList = products.map(({ productId, name }) => {
-    return {
-      name,
-      productId
-    }
-  })
-
-  return {
-    message: "Okay, great! Let's get started. \n Here are the top sellers. Select an option below",
-    data: productList
-  };
+async function handlePurposeIntent() {
+  const randomResponseIndex = Math.floor(Math.random() * data.purpose.answers.length);
+  return data.purpose.answers[randomResponseIndex];
 }
+
+
 async function handlePurchaseProductIntentByEntity(entities) {
   const { products } = database;
 
@@ -68,41 +59,76 @@ async function handlePurchaseProductIntentByEntity(entities) {
   };
 }
 
-async function respondToUserInput(input, productId) {
+
+async function respondToUserInput(input) {
+  
   const response = await manager.process('en', input);
-  console.log(response, "response")
+  const {intent} = response || {};
 
-  let responseMessage = 'Didn\'t understand you there!';
-  let responseData = null;
+  const body = {
+    message: "", 
+    payload: {
+      type: "", 
+      data: [], 
+      meta: {}
+    }
+  }
+  
+  switch(intent) {
+    case "greeting": { 
 
-  if (response && response.intent === 'greeting') {
-    responseMessage = await handleGreetingIntent();
-  } else if (response.intent === 'purchase_product') {
-    let productResponse;
-    const isWordUsed = checkWordUsage(response.utterance, "gaming");
+      const text = await handleGreetingIntent();
+      body.message = text;
+      
+      break;
 
-    if (isWordUsed) {
-      productResponse = await handlePurchaseProductIntentByEntity(["gaming"]);
-    } else {
-      productResponse = await handlePurchaseProductIntent(productId);
     }
 
-    responseMessage = productResponse.message;
-    responseData = productResponse.data;
-  } else if (response.intent === "confused") {
-    responseMessage =  response.answers[0].answer;
-    responseData = []
+    case "purchase_product": {
+
+      const {message, data} = await handlePurchaseProductIntentByEntity(["gaming"]);
+
+      body.message = message; 
+      body.payload.data = data;
+      body.payload.type = "product";
+
+      break;
+    }
+
+    case "confused": {
+
+      const {answer: message} = response.answers[0]
+      body.message = message;
+
+      break;
+
+    }
+
+    case "intended-usage": {
+
+      const text = await handlePurposeIntent();
+
+      body.message = text; 
+
+      body.payload.data = ["gaming", "camera", "battery", "social media"];
+
+      body.payload.meta = {
+        variant: "256 GB"
+      }
+
+      body.payload.type = "requirements"
+
+      break;
+
+    }
   }
 
-  return {
-    message: responseMessage,
-    data: responseData
-  };
+  return body
 }
 
 app.post('/api/nlp', (req, res) => {
-  const { productId, message: userMessage } = req.body || {}
-  respondToUserInput(userMessage, productId).then((botResponse) => res.send(botResponse))
+  const { message: userMessage } = req.body || {}
+  respondToUserInput(userMessage).then((botResponse) => res.send(botResponse))
     .catch((error) => {
       console.error(error);
       res.status(500).json({ message: 'An error occurred' });
@@ -123,52 +149,6 @@ function checkKeywords(message, keywordsList) {
 
   return keywordsPresent;
 }
-
-
-app.post("/api/unsure/:type", (req, res) => {
-
-  const { type } = req.params;
-  const { message } = req.body;
-
-  const keywordsList = ["gaming", "photography", "camera", "battery", "social media"];
-
-  const keywordsPresent = checkKeywords(message, keywordsList);
-
-  res.send({
-    data: keywordsPresent
-  })
-
-});
-
-
-
-app.get('/api/recommend-storage', (req, res) => {
-  const userMessage = req.query.message;
-
-  manager.process('en', userMessage).then((response) => {
-
-    if (response && response.intent && response.entities) {
-
-      const userIntention = response.intent;
-      const userEntities = response.entities;
-
-      if (userIntention === 'intended-usage') {
-        const usageTypes = userEntities.map((entity) => entity.body);
-
-        const recommendedStorage = determineStorageBasedOnUsage(usageTypes);
-
-        res.json({
-          message: `Based on your intended usage for ${usageTypes.join(', ')}, we recommend the following storage options.`,
-          recommendedStorage: recommendedStorage,
-        });
-      } else {
-        res.json({ message: "I'm not sure how to assist with this intention." });
-      }
-    } else {
-      res.json({ message: "I didn't understand your request." });
-    }
-  });
-});
 
 function determineStorageBasedOnUsage(usageTypes) {
 
@@ -208,7 +188,7 @@ trainNLPModel().then(() => {
 });
 
 
-
+manager.addDocument('en', "Taking a lot of pictures, using social media and playing some heavy games.", 'intended-usage', { entities: [{ start: 10, end: 15, entity: 'UsageType', body: 'gaming' }] });
 manager.addDocument('en', `I'm into gaming`, 'intended-usage', { entities: [{ start: 10, end: 15, entity: 'UsageType', body: 'gaming' }] });
 manager.addDocument('en', 'I want to use it for social media', 'intended-usage', { entities: [{ start: 23, end: 34, entity: 'UsageType', body: 'social media' }] });
 manager.addDocument('en', 'I need it for general usage', 'intended-usage', { entities: [{ start: 21, end: 33, entity: 'UsageType', body: 'general usage' }] });

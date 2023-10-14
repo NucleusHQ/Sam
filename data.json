@@ -69,7 +69,14 @@
       "answers": [
         "No problem! Let me know what purpose you’ll be using the product for in your own words. \nAccordingly, I can suggest which storage variant would be ideal for you. "
       ]
-    } 
+    }, 
+    "purpose": {
+      "questions": [
+      ], 
+      "answers": [
+        "I see these are important to you."
+      ]
+    }
 
   }
   
