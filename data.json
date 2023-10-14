@@ -50,7 +50,26 @@
         "answers": [
             "That's great. Here's what's trending. Pick one!"
         ]
-    }
+    }, 
+    "confused": {
+      "questions": [
+        "I'm not sure", 
+        "I am confused",
+        "I need more time to decide.",
+        "I'm not quite sure about that.",
+        "I'm feeling a bit lost here.",
+        "I'm not entirely convinced.",
+        "I'm finding it hard to make up my mind.",
+        "I'm still trying to figure things out.",
+        "I'm uncertain about what to do next.",
+        "I'm at a crossroads with this decision.",
+        "I'm feeling a bit conflicted at the moment.",
+        "I'm struggling to make sense of it all."
+      ], 
+      "answers": [
+        "No problem! Let me know what purpose you’ll be using the product for in your own words. \nAccordingly, I can suggest which storage variant would be ideal for you. "
+      ]
+    } 
 
   }
   

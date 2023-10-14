@@ -5,6 +5,7 @@
             "base-price": "1199",
             "type": "phone",
             "productId": "101",
+            "url": "https://image-us.samsung.com/us/smartphones/galaxy-s23-ultra/images/gallery/green/01-DM3-Green-PDP-1600x1200.jpg?$configurator-horizontal-view2-jpg$",
             "features": [
                 "gaming",
                 "camera",
@@ -14,6 +15,7 @@
                 "5G",
                 "durability"
             ],
+            "productLink": "https://www.samsung.com/us/smartphones/galaxy-s23-ultra/buy/galaxy-s23-ultra-256gb-unlocked-sm-s918uzgaxaa/",
             "salesCount": "80",
             "colors": [
                 {
@@ -55,28 +57,31 @@
                     "storageGB": 1024
                 }
             ],
-            "featureDescription": [
-                {
-                    "tilte" : "",
-                    "description": "The Samung Galaxy S23 Ultra is the best option gaming"
-                },
-                {
-                    "tilte" : "Powerful processor",
-                    "description": "Offers exceptional processing power for smooth gameplay"
-                },
-                {
-                    "tilte" : "Large Dynamic AMOLED Display",
-                    "description": "Provides a vibrant and responsive gaming experience"
-                },
-                {
-                    "tilte" : "High Ram Capacity",
-                    "description": "Enables seamless multitasking and resource intensive game performance"
-                },
-                {
-                    "tilte" : "Long Battery Life",
-                    "description": "Facilitates extented gaming sesions without frequent recharging"
-                }
-            ]
+            "featureDescription": {
+                "title": "The Samung Galaxy S23 Ultra is the best option gaming", 
+                "specList":  [
+                    {
+                        "tilte" : "Powerful processor",
+                        "description": "Offers exceptional processing power for smooth gameplay", 
+                        "spec": "Snapdragon 888"
+                    },
+                    {
+                        "tilte" : "Large Dynamic AMOLED Display",
+                        "description": "Provides a vibrant and responsive gaming experience", 
+                        "spec": "120 Hz Refresh rate"
+                    },
+                    {
+                        "tilte" : "High Ram Capacity",
+                        "description": "Enables seamless multitasking and resource intensive game performance",
+                        "spec": "12 GB"
+                    },
+                    {
+                        "tilte" : "Long Battery Life",
+                        "description": "Facilitates extented gaming sesions without frequent recharging", 
+                        "spec": "500 mAh"
+                    }
+                ]
+            }
         },
         {
             "name": "Galaxy Z Fold 3",

@@ -21,6 +21,8 @@ function addDocumentsAndAnswers(manager, intent, questions, answers) {
 
 addDocumentsAndAnswers(manager, 'greeting', data.greetings.questions, data.greetings.answers);
 addDocumentsAndAnswers(manager, 'purchase_product', data.purchase_product.questions, data.purchase_product.answers);
+addDocumentsAndAnswers(manager, 'confused', data.confused.questions, data.confused.answers);
+
 
 
 manager.addNamedEntityText('UsageType', 'gaming');
@@ -42,11 +44,11 @@ async function handleGreetingIntent() {
 
 async function handlePurchaseProductIntent(productId) {
   const { products } = database;
-  
-  const productList = products.map(({productId, name}) => {
-    return {    
-        name, 
-        productId
+
+  const productList = products.map(({ productId, name }) => {
+    return {
+      name,
+      productId
     }
   })
 
@@ -57,17 +59,19 @@ async function handlePurchaseProductIntent(productId) {
 }
 async function handlePurchaseProductIntentByEntity(entities) {
   const { products } = database;
-  
-  const productList = products.filter((product) => product.features.includes[entities[0]]);
+
+  const productList = products.filter((product) => product.features.includes(entities[0]));
 
   return {
-    message: "I got you covered. Here's the best phone for gaming",
-    data: productList.slice(0,1)
+    message: `I got you covered. Here's the best phone for ${entities[0]}`,
+    data: productList.slice(0, 1)
   };
 }
 
 async function respondToUserInput(input, productId) {
   const response = await manager.process('en', input);
+  console.log(response, "response")
+
   let responseMessage = 'Didn\'t understand you there!';
   let responseData = null;
 
@@ -75,12 +79,19 @@ async function respondToUserInput(input, productId) {
     responseMessage = await handleGreetingIntent();
   } else if (response.intent === 'purchase_product') {
     let productResponse;
-    if(response.entities.length > 0){
-      productResponse = await handlePurchaseProductIntentByEntity(response.entities);
+    const isWordUsed = checkWordUsage(response.utterance, "gaming");
+
+    if (isWordUsed) {
+      productResponse = await handlePurchaseProductIntentByEntity(["gaming"]);
+    } else {
+      productResponse = await handlePurchaseProductIntent(productId);
     }
-    productResponse = await handlePurchaseProductIntent(productId);
+
     responseMessage = productResponse.message;
     responseData = productResponse.data;
+  } else if (response.intent === "confused") {
+    responseMessage =  response.answers[0].answer;
+    responseData = []
   }
 
   return {
@@ -90,7 +101,7 @@ async function respondToUserInput(input, productId) {
 }
 
 app.post('/api/nlp', (req, res) => {
-  const {productId, message: userMessage} = req.body || {}
+  const { productId, message: userMessage } = req.body || {}
   respondToUserInput(userMessage, productId).then((botResponse) => res.send(botResponse))
     .catch((error) => {
       console.error(error);
@@ -99,65 +110,102 @@ app.post('/api/nlp', (req, res) => {
 });
 
 
-app.get("/api/unsure/:type", (req, res) => {
-    const {storage} = req.params.type;
-    res.send({
-        message: "No problem. Tell me what you'll be using the phone for. I'll suggest what's best for you", 
-        data: null
-    })
+function checkKeywords(message, keywordsList) {
+  let keywordsPresent = [];
+  const lowerCaseMessage = message.toLowerCase();
+
+  for (const keyword of keywordsList) {
+    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+    if (lowerCaseMessage.match(regex)) {
+      keywordsPresent.push(keyword);
+    }
+  }
+
+  return keywordsPresent;
+}
+
+
+app.post("/api/unsure/:type", (req, res) => {
+
+  const { type } = req.params;
+  const { message } = req.body;
+
+  const keywordsList = ["gaming", "photography", "camera", "battery", "social media"];
+
+  const keywordsPresent = checkKeywords(message, keywordsList);
+
+  res.send({
+    data: keywordsPresent
+  })
+
 });
 
 
 
 app.get('/api/recommend-storage', (req, res) => {
-    const userMessage = req.query.message;
-  
-    manager.process('en', userMessage).then((response) => {
+  const userMessage = req.query.message;
 
-        if (response && response.intent && response.entities) {
+  manager.process('en', userMessage).then((response) => {
 
-            const userIntention = response.intent;
-        const userEntities = response.entities;
-  
-        if (userIntention === 'intended-usage') {
-          const usageTypes = userEntities.map((entity) => entity.body);
-  
-          const recommendedStorage = determineStorageBasedOnUsage(usageTypes);
-  
-          res.json({
-            message: `Based on your intended usage for ${usageTypes.join(', ')}, we recommend the following storage options.`,
-            recommendedStorage: recommendedStorage,
-          });
-        } else {
-          res.json({ message: "I'm not sure how to assist with this intention." });
-        }
+    if (response && response.intent && response.entities) {
+
+      const userIntention = response.intent;
+      const userEntities = response.entities;
+
+      if (userIntention === 'intended-usage') {
+        const usageTypes = userEntities.map((entity) => entity.body);
+
+        const recommendedStorage = determineStorageBasedOnUsage(usageTypes);
+
+        res.json({
+          message: `Based on your intended usage for ${usageTypes.join(', ')}, we recommend the following storage options.`,
+          recommendedStorage: recommendedStorage,
+        });
       } else {
-        res.json({ message: "I didn't understand your request." });
+        res.json({ message: "I'm not sure how to assist with this intention." });
       }
-    });
+    } else {
+      res.json({ message: "I didn't understand your request." });
+    }
   });
-  
+});
+
 function determineStorageBasedOnUsage(usageTypes) {
 
-if (usageTypes.includes('gaming')) {
-    return '256GB'; 
-} else if (usageTypes.includes('photography')) {
-    return '512GB'; 
-} else if (usageTypes.includes('social media')) {
-    return '128GB'; 
-} else if (usageTypes.includes('general usage')) {
-    return '256GB'; 
-} else {
-    return '128GB'; 
+  if (usageTypes.includes('gaming')) {
+    return '256GB';
+  } else if (usageTypes.includes('photography')) {
+    return '512GB';
+  } else if (usageTypes.includes('social media')) {
+    return '128GB';
+  } else if (usageTypes.includes('general usage')) {
+    return '256GB';
+  } else {
+    return '128GB';
+  }
 }
-}
+
+manager.addDocument(
+  'en',
+  'I want to buy the best phone you have for gaming',
+  'purchase_product',
+  {
+    entities: [{
+      start: 42,
+      end: 48,
+      entity: 'product',
+      body: 'gaming'
+    }]
+  }
+);
+
+manager.addNamedEntityText('product', 'gaming', ['en'], ['gaming']);
 
 trainNLPModel().then(() => {
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
 });
-
 
 
 
@@ -176,3 +224,14 @@ manager.addDocument('en', 'My interests are gaming, photography, and social medi
 manager.addDocument('en', 'General usage and gaming', 'intended-usage', { entities: [{ start: 0, end: 12, entity: 'UsageType', body: 'general usage' }, { start: 17, end: 22, entity: 'UsageType', body: 'gaming' }] });
 manager.addDocument('en', 'I want to use it for general purposes and social media', 'intended-usage', { entities: [{ start: 21, end: 33, entity: 'UsageType', body: 'general usage' }, { start: 38, end: 49, entity: 'UsageType', body: 'social media' }] });
 manager.addDocument('en', 'Gaming and photography are my main uses', 'intended-usage', { entities: [{ start: 0, end: 11, entity: 'UsageType', body: 'gaming' }, { start: 16, end: 27, entity: 'UsageType', body: 'photography' }] });
+
+
+function checkWordUsage(text, word) {
+  const regex = new RegExp(`\\b${word}\\b`, 'i'); 
+  const matches = text.match(regex); 
+  if (matches) {
+    return true; 
+  }
+  return false; 
+}
+
