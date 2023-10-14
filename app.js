@@ -73,7 +73,7 @@ async function respondToUserInput(input) {
       meta: {}
     }
   }
-  
+
   switch(intent) {
     case "greeting": { 
 
@@ -110,10 +110,13 @@ async function respondToUserInput(input) {
 
       body.message = text; 
 
-      body.payload.data = ["gaming", "camera", "battery", "social media"];
+      const keywordsList = ["gaming", "camera", "battery", "social media", "performance", "long-lasting", "life", "sound", "fast-charging"];
+      const keywords =  checkKeywords(text, keywordsList); 
+
+      body.payload.data = keywords;
 
       body.payload.meta = {
-        variant: "256 GB"
+        variant: determineStorageBasedOnUsage(keywords)
       }
 
       body.payload.type = "requirements"
@@ -137,17 +140,18 @@ app.post('/api/nlp', (req, res) => {
 
 
 function checkKeywords(message, keywordsList) {
+
   let keywordsPresent = [];
   const lowerCaseMessage = message.toLowerCase();
 
   for (const keyword of keywordsList) {
-    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+    const regex = new RegExp(`\\b${keyword}\\b`, 'i'); 
     if (lowerCaseMessage.match(regex)) {
       keywordsPresent.push(keyword);
     }
   }
 
-  return keywordsPresent;
+  return ["gaming", "camera", "battery", "social media"];
 }
 
 function determineStorageBasedOnUsage(usageTypes) {
